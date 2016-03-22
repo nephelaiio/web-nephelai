@@ -1,0 +1,13 @@
+{
+  "name": "web-nephelai",
+  "description": "web frontend for nephelai.io",
+  "license": "UNLICENSED",
+  "repository": "nephelai/web-nephelai",
+  "version": "0.0.1",
+  "dependencies": {
+  }
+  "devDependencies": {
+    "grunt": ">= 0.4.5",
+    "grunt-handlebars-layouts": ">= 0.2.5"
+  }
+}
