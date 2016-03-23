@@ -2,12 +2,19 @@
   "name": "web-nephelai",
   "description": "web frontend for nephelai.io",
   "license": "UNLICENSED",
-  "repository": "nephelai/web-nephelai",
+  "repository": {
+    "url": "nephelai/web-nephelai",
+    "type": "github"
+  },
   "version": "0.0.1",
-  "dependencies": {
-  }
+  "dependencies": {},
   "devDependencies": {
-    "grunt": ">= 0.4.5",
-    "grunt-handlebars-layouts": ">= 0.2.5"
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-hb": "^5.0.1",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-rename": "^1.2.2",
+    "handlebars": "^4.0.5",
+    "handlebars-layout": "^0.1.3"
   }
 }
