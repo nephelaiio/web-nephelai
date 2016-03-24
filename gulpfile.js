@@ -18,12 +18,12 @@ gulp.task('css', function() {
         .pipe(gulp.dest(defaults.dist.css))
 });
 
-//TODO: check partials are correctly embedded within layouts
 gulp.task('handlebars', function() {
     var hbStream = hb()
         .partials('./src/partials/*.hbs')
         .partials('./src/layouts/*.hbs')
-        .helpers(hblayouts);
+        .helpers(hblayouts)
+        .data('./src/data/*.json');
     return gulp.src('./src/views/*.hbs')
         .pipe(hbStream)
         .pipe(rename({
