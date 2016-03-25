@@ -1,9 +1,15 @@
-var  gulp = require('gulp'),
+var gulp = require('gulp'),
     rename = require('gulp-rename'),
     hb = require('gulp-hb'),
     hblayouts = require('handlebars-layout'),
     htmlhint = require('gulp-htmlhint'),
     del = require('del');
+
+var hbStream = hb()
+    .partials('./src/partials/*.hbs')
+    .partials('./src/layouts/*.hbs')
+    .helpers(hblayouts)
+    .data('./src/data/*.json');
 
 var defaults = {
     dist: {
@@ -13,17 +19,12 @@ var defaults = {
     }
 };
 
-gulp.task('css', function() {
+gulp.task('css', function () {
     return gulp.src('./src/css/*.css')
         .pipe(gulp.dest(defaults.dist.css))
 });
 
-gulp.task('handlebars', function() {
-    var hbStream = hb()
-        .partials('./src/partials/*.hbs')
-        .partials('./src/layouts/*.hbs')
-        .helpers(hblayouts)
-        .data('./src/data/*.json');
+gulp.task('handlebars', function () {
     return gulp.src('./src/views/*.hbs')
         .pipe(hbStream)
         .pipe(rename({
@@ -43,7 +44,7 @@ gulp.task('lint', ['build'], function () {
         .pipe(htmlhint.failReporter())
 });
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
     return del([
         './dist'
     ])
