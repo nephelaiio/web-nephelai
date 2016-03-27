@@ -14,14 +14,13 @@ var hbStream = hb()
 var defaults = {
     dist: {
         root: "./dist",
-        js: "./dist/js",
-        css: "./dist/css"
+        assets: "./dist/assets",
     }
 };
 
-gulp.task('css', function () {
-    return gulp.src('./src/css/*.css')
-        .pipe(gulp.dest(defaults.dist.css))
+gulp.task('assets', function () {
+    return gulp.src('./src/assets/**/*')
+        .pipe(gulp.dest(defaults.dist.assets))
 });
 
 gulp.task('handlebars', function () {
@@ -36,7 +35,7 @@ gulp.task('handlebars', function () {
         .pipe(gulp.dest(defaults.dist.root))
 });
 
-gulp.task('build', ['css', 'handlebars']);
+gulp.task('build', ['assets', 'handlebars']);
 
 gulp.task('lint', ['build'], function () {
     return gulp.src('./dist/**.html')
