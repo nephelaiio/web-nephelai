@@ -1,26 +1,7 @@
 {
-  "css": [
-    {
-      "url": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
-      "integrity": "sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    },
-    {
-      "url": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css",
-      "integrity": "sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-    },
-    {
-      "url": "https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css",
-      "integrity": "sha384-sPZtnf00OKtohgCjYPiHYhx4vOa4gD182/f6+z1N+LzXdE2e5bENObUq17/FrRFS"
-    }
-  ],
   "js": [
     {
-      "url": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js",
-      "integrity": "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-    },
-    {
-      "url": "https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js",
-      "integrity": "sha384-EZKKO3vHj6CHKQPIi5+Ubzvx7GjCAfgb/28vGjgly8qKb2DMq7V5D2o//Bjp9z03"
+      "url": "./assets/node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"
     }
   ]
 }

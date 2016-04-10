@@ -1,9 +1,12 @@
 var gulp = require('gulp'),
+    install = require('gulp-install'),
     rename = require('gulp-rename'),
     hb = require('gulp-hb'),
     hblayouts = require('handlebars-layout'),
     htmlhint = require('gulp-htmlhint'),
-    del = require('del');
+    del = require('del'),
+    sass = require('gulp-sass'),
+    gnf = require('gulp-npm-files');
 
 var hbStream = hb()
     .partials('./src/partials/*.hbs')
@@ -14,16 +17,39 @@ var hbStream = hb()
 var defaults = {
     dist: {
         root: "./dist",
+        css: "./dist/css",
         assets: "./dist/assets",
     }
 };
 
-gulp.task('assets', function () {
+gulp.task('update', function () {
+    return gulp.src('./package.json')
+        .pipe(install())
+});
+
+gulp.task('modules', ['update'], function () {
+   return gulp.src(gnf(), {base: './'})
+       .pipe(gulp.dest(defaults.dist.assets))
+});
+
+gulp.task('assets', ['update'], function () {
     return gulp.src('./src/assets/**/*')
         .pipe(gulp.dest(defaults.dist.assets))
 });
 
-gulp.task('handlebars', function () {
+gulp.task('sass', ['modules'], function () {
+    return gulp.src('./src/sass/*.scss')
+        .pipe(sass({
+            includePaths: [
+                './node_modules/bootstrap-sass/assets/stylesheets',
+                './node_modules/support-for/sass',
+                './node_modules/normalize-scss/sass'
+            ]
+        }).on('error', sass.logError))
+        .pipe(gulp.dest(defaults.dist.css))
+});
+
+gulp.task('handlebars', ['update'], function () {
     return gulp.src('./src/views/*.hbs')
         .pipe(hbStream)
         .pipe(rename({
@@ -35,7 +61,7 @@ gulp.task('handlebars', function () {
         .pipe(gulp.dest(defaults.dist.root))
 });
 
-gulp.task('build', ['assets', 'handlebars']);
+gulp.task('build', ['modules', 'sass', 'assets', 'handlebars']);
 
 gulp.task('lint', ['build'], function () {
     return gulp.src('./dist/**.html')
