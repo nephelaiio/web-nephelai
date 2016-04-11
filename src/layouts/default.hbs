@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
     {{>default.css}}
+    {{>font-awesome.css}}
 </head>
 
 <body>
+    <div class="container-fluid">
     {{#block "header"}}
         {{>navbar}}
     {{/block}}
@@ -17,9 +19,10 @@
     {{#block "footer"}}
         {{>footer}}
     {{/block}}
-
+    </div>
 
 {{>bootstrap.js}}
+{{>html5shiv.js}}
 
 </body>
 </html>

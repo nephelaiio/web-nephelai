@@ -1,3 +1,35 @@
-@import "bootstrap";
+// Framework overrides
+
+@import "web-fonts";
+
+$fonts_url: web-fonts-url("Open Sans", "Inconsolata");
+@import url($fonts_url);
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$text-color: $gray-dark;
+
+$navbar-default-bg: transparent;
+$navbar-default-color: $text-color;
+$navbar-default-link-hover-color: $navbar-default-color;
+$navbar-default-link-color: $navbar-default-color;
+
+$nav-link-hover-bg: $navbar-default-bg;
+
+$font-family-sans-serif: "Open Sans";
+$font-family-monospace: "Inconsolata";
 
 @import "normalize";
+
+@import "bootstrap";
+
+// Custom settings
+
+.navbar a {
+  color: $navbar-default-link-color;
+}

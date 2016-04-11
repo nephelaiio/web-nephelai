@@ -18,7 +18,7 @@ var defaults = {
     dist: {
         root: "./dist",
         css: "./dist/css",
-        assets: "./dist/assets",
+        assets: "./dist/assets"
     }
 };
 
@@ -43,7 +43,8 @@ gulp.task('sass', ['modules'], function () {
             includePaths: [
                 './node_modules/bootstrap-sass/assets/stylesheets',
                 './node_modules/support-for/sass',
-                './node_modules/normalize-scss/sass'
+                './node_modules/normalize-scss/sass',
+                './node_modules/sass-web-fonts'
             ]
         }).on('error', sass.logError))
         .pipe(gulp.dest(defaults.dist.css))
