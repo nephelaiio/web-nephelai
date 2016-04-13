@@ -2,6 +2,11 @@
 /dist
 /node_modules
 
+## Nightwatch
+/reports
+/selenium.logs
+**/selenium-debug.log
+
 ### JetBrains
 
 ## Directory-based project format:

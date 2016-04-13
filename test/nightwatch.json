@@ -1,0 +1,35 @@
+{
+
+  "src_folders": [
+    "./test"
+  ],
+
+  "output_folder": "reports",
+  "selenium": {
+    "start_process": true,
+    "server_path": "bin/selenium-server-standalone-2.53.0.jar",
+    "log_path": "",
+    "host": "127.0.0.1",
+    "port": 4444
+  },
+
+  "test_settings": {
+    "default": {
+      "launch_url": "http://localhost:8080",
+      "selenium_host": "localhost",
+      "selenium_port": 4444,
+      "silent": false,
+      "screenshots": {
+        "enabled": false
+      }
+    },
+
+    "firefox": {
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    }
+  }
+}
