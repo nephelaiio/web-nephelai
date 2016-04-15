@@ -1,6 +1,8 @@
 machine:
   timezone:
     America/Costa_Rica
+  node:
+    version: 5.10.1
 
 test:
   pre:
