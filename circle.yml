@@ -4,6 +4,6 @@ machine:
 
 test:
   pre:
-    - gulp http
+    - gulp build http
   override:
-    - gulp build lint test
+    - gulp test

@@ -78,7 +78,7 @@ gulp.task('clean', function () {
     ])
 });
 
-gulp.task('test', function () {
+gulp.task('nightwatch', function () {
     return gulp.src('')
         .pipe(nightwatch({
             configFile: 'test/nightwatch.json',
@@ -95,4 +95,6 @@ gulp.task('http', function () {
     });
 });
 
-gulp.task('default', ['lint', 'test']);
+gulp.task('default', ['lint', 'nightwatch']);
+
+gulp.task('default', ['test']);
