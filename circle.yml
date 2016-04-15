@@ -4,6 +4,10 @@ machine:
   node:
     version: 5.10.1
 
+dependencies:
+  post:
+    - rm -f ./node_modules
+
 test:
   pre:
     - gulp build http
