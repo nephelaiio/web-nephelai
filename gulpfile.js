@@ -95,6 +95,6 @@ gulp.task('http', function () {
     });
 });
 
-gulp.task('default', ['lint', 'nightwatch']);
+gulp.task('test', ['lint', 'nightwatch']);
 
 gulp.task('default', ['test']);
