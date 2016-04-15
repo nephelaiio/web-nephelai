@@ -9,7 +9,5 @@ dependencies:
     - rm -rf ./node_modules
 
 test:
-  pre:
-    - gulp build http
   override:
     - gulp test

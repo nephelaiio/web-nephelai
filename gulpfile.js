@@ -6,9 +6,7 @@ var gulp = require('gulp'),
     htmlhint = require('gulp-htmlhint'),
     del = require('del'),
     sass = require('gulp-sass'),
-    gnf = require('gulp-npm-files'),
-    nightwatch = require('gulp-nightwatch'),
-    connect = require('gulp-connect');
+    gnf = require('gulp-npm-files');
 
 var hbStream = hb()
     .partials('./src/partials/*.hbs')
@@ -78,23 +76,6 @@ gulp.task('clean', function () {
     ])
 });
 
-gulp.task('nightwatch', function () {
-    return gulp.src('')
-        .pipe(nightwatch({
-            configFile: 'test/nightwatch.json',
-            cliArgs: {
-                env: 'phantomJS'
-            }
-        }));
-});
-
-gulp.task('http', function () {
-    connect.server({
-        port: 8888,
-        root: 'dist'
-    });
-});
-
-gulp.task('test', ['lint', 'nightwatch']);
+gulp.task('test', ['lint');
 
 gulp.task('default', ['test']);
