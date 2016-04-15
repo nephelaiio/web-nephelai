@@ -76,6 +76,6 @@ gulp.task('clean', function () {
     ])
 });
 
-gulp.task('test', ['lint');
+gulp.task('test', ['lint']);
 
 gulp.task('default', ['test']);
