@@ -30,8 +30,8 @@ gulp.task('update', function () {
 });
 
 gulp.task('modules', ['update'], function () {
-   return gulp.src(gnf(), {base: './'})
-       .pipe(gulp.dest(defaults.dist.assets))
+    return gulp.src(gnf(), {base: './'})
+        .pipe(gulp.dest(defaults.dist.assets))
 });
 
 gulp.task('assets', ['update'], function () {
@@ -66,7 +66,7 @@ gulp.task('handlebars', ['update'], function () {
 
 gulp.task('build', ['modules', 'sass', 'assets', 'handlebars']);
 
-gulp.task('lint', ['build'], function () {
+gulp.task('lint', function () {
     return gulp.src('./dist/**.html')
         .pipe(htmlhint())
         .pipe(htmlhint.failReporter())
@@ -79,20 +79,20 @@ gulp.task('clean', function () {
 });
 
 gulp.task('test', function () {
+    return gulp.src('')
+        .pipe(nightwatch({
+            configFile: 'test/nightwatch.json',
+            cliArgs: {
+                env: 'phantomJS'
+            }
+        }));
+});
+
+gulp.task('http', function () {
     connect.server({
         port: 8888,
         root: 'dist'
     });
-    gulp.src('')
-        .pipe(nightwatch({
-            configFile: 'test/nightwatch.json',
-            cliArgs: {
-                env: 'default'
-            }
-        }));
-    connect.serverClose();
 });
 
-
-
-gulp.task('default', ['lint']);
+gulp.task('default', ['lint', 'test']);

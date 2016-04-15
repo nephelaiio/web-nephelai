@@ -4,8 +4,8 @@
 
 ## Nightwatch
 /reports
-/selenium.logs
 **/selenium-debug.log
+/temp
 
 ### JetBrains
 
