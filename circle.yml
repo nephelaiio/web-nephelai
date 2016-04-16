@@ -22,7 +22,7 @@ test:
 
 deployment:
   production:
-    branch: production
+    branch: master
     commands:
       - aws s3 sync --delete dist s3://production.nephelai.io
   staging:
