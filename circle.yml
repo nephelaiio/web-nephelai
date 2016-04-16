@@ -7,7 +7,24 @@ machine:
 dependencies:
   pre:
     - rm -rf ./node_modules
+  override:
+    - npm install
+  post:
+    - sudo pip install awscli
+    - aws configure set region us-east-1
+    - aws configure set preview.cloudfront true
+    - aws configure set preview.create-invalidation true
 
 test:
   override:
     - gulp test
+
+deployment:
+  production:
+    branch: production
+    commands:
+      - aws s3 sync --delete dist s3://production.nephelai.io
+  staging:
+    branch: staging
+    commands:
+      - aws s3 sync --delete dist s3://staging.nephelai.io
