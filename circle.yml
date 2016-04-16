@@ -10,7 +10,7 @@ dependencies:
   override:
     - npm install
   post:
-    - sudo pip install awscli
+    - sudo apt-get install -y awscli
     - aws configure set region us-east-1
     - aws configure set preview.cloudfront true
     - aws configure set preview.create-invalidation true
