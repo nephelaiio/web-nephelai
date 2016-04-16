@@ -7,6 +7,7 @@ machine:
 dependencies:
   pre:
     - rm -rf ./node_modules
+    - npm install -g gulp
   override:
     - npm install
   post:
