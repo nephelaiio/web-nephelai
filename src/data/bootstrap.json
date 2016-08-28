@@ -1,7 +1,10 @@
 {
   "js": [
     {
-      "url": "./assets/node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"
+      "url": "./assets/node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
+    },
+    {
+      "url": "./assets/node_modules/bootstrap-sass/assets/javascripts/bootstrap-sprockets.js"
     }
   ]
 }
