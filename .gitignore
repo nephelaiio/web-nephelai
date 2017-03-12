@@ -1,28 +1,5 @@
-### Javascript
-/dist
-/node_modules
+## Bundler
+Gemfile.lock
 
-## Nightwatch
-/reports
-**/selenium-debug.log
-/temp
-
-### JetBrains
-
-## Directory-based project format:
-.idea/
-
-## File-based project format:
-*.ipr
-*.iws
-
-## Plugin-specific files:
-
-# IntelliJ
-/out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-### Vim
+## Vim
 **/*.swp
